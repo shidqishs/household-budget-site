@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabungan — SakuRumah</title>
+<meta name="description" content="Tujuan tabungan Keluarga Prasetyo: dana darurat, pendidikan anak, liburan, renovasi — lengkap dengan kalkulator setoran.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230b5e57%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2716%27 text-anchor=%27middle%27 fill=%27white%27 font-family=%27sans-serif%27 font-weight=%27bold%27%3ES%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="main.js"></script>
+</head>
+<body data-page="goals">
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="index.html"><span class="brand-mark">S</span><span><span class="brand-name">SakuRumah</span><br><span class="brand-sub">Anggaran Rumah Tangga</span></span></a>
+  <div class="tagline"><b>Keluarga Prasetyo — 4 orang</b><br>Jakarta Selatan · November 2026</div>
+</div></header>
+<nav class="mainnav"><div class="mainnav-inner">
+  <a href="index.html">Dashboard</a>
+  <a href="anggaran.html">Anggaran</a>
+  <a href="pengeluaran.html">Pengeluaran</a>
+  <a href="tabungan.html" aria-current="page">Tabungan</a>
+  <a href="laporan.html">Laporan</a>
+  <span class="nav-right">Pemasukan Rp12.500.000/bln · diperbarui 26 Nov 2026</span>
+</div></nav>
+<main class="wrap">
+  <div class="page-head">
+    <h1>Tabungan &amp; tujuan keluarga</h1>
+    <p>Empat tujuan dengan setoran otomatis Rp2.500.000 per bulan (20% penghasilan). Tambah setoran ke tujuan mana pun, atau hitung berapa lama lagi target tercapai dengan kalkulator di bawah.</p>
+  </div>
+
+  <section class="grid kpis" id="kpis" aria-label="Ringkasan tabungan"></section>
+
+  <div class="grid two-wide" style="margin-top:16px">
+    <section>
+      <div id="goal-list"></div>
+      <div class="callout"><b>Aturan keluarga:</b> dana darurat tidak boleh dipakai untuk belanja bulanan. Kalau bulan ini sisa Rp1.100.000 tidak cukup, potong dulu dari Hiburan dan Lainnya — dana darurat hanya untuk keadaan darurat (sakit, PHK, perbaikan mendesak).</div>
+    </section>
+    <section class="card">
+      <h2>Kalkulator: kapan target tercapai?</h2>
+      <p class="lede">Masukkan target, tabungan yang sudah ada, dan setoran per bulan. Perkiraan dihitung langsung saat Anda mengetik.</p>
+      <form class="stack" id="calc-form">
+        <label for="c-target">Target tabungan (Rp)</label>
+        <input type="number" id="c-target" min="0" step="50000" value="15000000">
+        <label for="c-saved">Sudah terkumpul (Rp)</label>
+        <input type="number" id="c-saved" min="0" step="50000" value="9750000">
+        <label for="c-monthly">Setoran per bulan (Rp)</label>
+        <input type="number" id="c-monthly" min="0" step="50000" value="1500000">
+      </form>
+      <p class="form-msg ok" id="calc-out" style="font-size:14px;line-height:1.6"></p>
+      <h3 style="margin-top:18px">Contoh setoran lain</h3>
+      <ul class="tight">
+        <li>Setoran <b>Rp1.000.000/bulan</b> → Dana Darurat tercapai dalam 6 bulan (Mei 2027).</li>
+        <li>Setoran <b>Rp500.000/bulan</b> → Liburan Keluarga tercapai dalam 7 bulan (Juni 2027).</li>
+        <li>Setoran <b>Rp750.000/bulan</b> → Renovasi Dapur tercapai dalam 9 bulan (Agustus 2027).</li>
+      </ul>
+      <p class="note">Perkiraan memakai setoran tetap tanpa bunga. Bunga deposito 4–5% per tahun mempercepat sekitar 1 bulan untuk target di atas Rp10.000.000.</p>
+    </section>
+  </div>
+</main>
+<footer class="site"><div class="foot-inner">
+  <div><h4>SakuRumah</h4>
+  Anggaran rumah tangga untuk Keluarga Prasetyo (4 orang, Jakarta Selatan). Angka di situs ini adalah anggaran contoh keluarga yang disusun untuk keperluan perencanaan — bukan data rekening sungguhan. Semua halaman bekerja tanpa internet; perubahan tersimpan di peramban Anda sendiri.</div>
+  <div><h4>Halaman</h4><ul>
+    <li><a href="index.html">Dashboard</a></li><li><a href="anggaran.html">Anggaran</a></li><li><a href="pengeluaran.html">Pengeluaran</a></li><li><a href="tabungan.html">Tabungan</a></li><li><a href="laporan.html">Laporan</a></li></ul></div>
+  <div><h4>Cara pakai</h4><ul>
+    <li>Angka dihitung dari transaksi</li><li>Ubah anggaran di halaman Anggaran</li><li>Perubahan tersimpan di peramban</li></ul></div>
+</div></footer>
+</body>
+</html>
