@@ -44,6 +44,41 @@ for (const shot of shots) {
   if (head[0] !== 0xff || head[1] !== 0xd8) throw new Error(`screenshot ${shot} is not a JPEG`);
 }
 
+// The brief forbids network requests: every script, stylesheet and media
+// must be a file under app/ or a data: URI (the inline SVG favicon is one).
+// Refuse a hand-in that fetches anything from another origin. The patterns
+// only match real URL-bearing attributes, so the data: favicon's
+// xmlns="http://www.w3.org/2000/svg" does not trip them.
+const EXTERNAL = [
+  /(?:src|href)\s*=\s*["']https?:\/\//i,
+  /(?:src|href)\s*=\s*["']\/\//i,
+  /url\(\s*["']?https?:\/\//i,
+  /@import\s+(?:url\(\s*)?["']?https?:/i,
+  /\b(?:fetch|XMLHttpRequest|WebSocket)\s*\(/,
+];
+const walk = (dir) => {
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const p = join(dir, entry.name);
+    if (entry.isDirectory()) walk(p);
+    else if (/\.(html|js|css)$/.test(entry.name)) {
+      const text = readFileSync(p, 'utf8');
+      for (const re of EXTERNAL) {
+        if (re.test(text)) throw new Error(`external reference in ${p} (${re})`);
+      }
+    }
+  }
+};
+walk(join(here, 'app'));
+
+// Every page must declare a viewport, or the phone screenshot's promise
+// ("works on a phone") is only half kept.
+for (const page of PAGES) {
+  const html = readFileSync(join(here, 'app', page), 'utf8');
+  if (!/<meta[^>]*name=["']viewport["']/i.test(html)) {
+    throw new Error(`app/${page} is missing a viewport meta tag`);
+  }
+}
+
 mkdirSync(out, { recursive: true });
 cpSync(join(here, 'app'), join(out, 'app'), { recursive: true });
 mkdirSync(join(out, 'screenshots'), { recursive: true });
