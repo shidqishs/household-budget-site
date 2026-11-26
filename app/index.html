@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SakuRumah — Anggaran Rumah Tangga</title>
+<meta name="description" content="SakuRumah: anggaran rumah tangga Keluarga Prasetyo — pemasukan, pengeluaran, tabungan, dan laporan November 2026.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230b5e57%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2716%27 text-anchor=%27middle%27 fill=%27white%27 font-family=%27sans-serif%27 font-weight=%27bold%27%3ES%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="main.js"></script>
+</head>
+<body data-page="home">
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="index.html"><span class="brand-mark">S</span><span><span class="brand-name">SakuRumah</span><br><span class="brand-sub">Anggaran Rumah Tangga</span></span></a>
+  <div class="tagline"><b>Keluarga Prasetyo — 4 orang</b><br>Jakarta Selatan · November 2026</div>
+</div></header>
+<nav class="mainnav"><div class="mainnav-inner">
+  <a href="index.html" aria-current="page">Dashboard</a>
+  <a href="anggaran.html">Anggaran</a>
+  <a href="pengeluaran.html">Pengeluaran</a>
+  <a href="tabungan.html">Tabungan</a>
+  <a href="laporan.html">Laporan</a>
+  <span class="nav-right">Pemasukan Rp12.500.000/bln · diperbarui 26 Nov 2026</span>
+</div></nav>
+<main class="wrap">
+  <div class="page-head">
+    <h1>Keuangan keluarga bulan ini</h1>
+    <p>Semua angka di halaman ini dihitung dari 29 transaksi yang tercatat 1–26 November 2026. Tidak ada angka contoh — ubah anggaran atau tambah pengeluaran, semua halaman ikut berubah.</p>
+  </div>
+
+  <section class="grid kpis" id="kpis" aria-label="Ringkasan keuangan"></section>
+
+  <div class="grid two-wide" style="margin-top:16px">
+    <section class="card">
+      <h2>Pengeluaran per kategori</h2>
+      <p class="lede">Total Rp11.400.000 dari pemasukan Rp12.500.000. Makan &amp; belanja adalah pos terbesar.</p>
+      <div class="chart-wrap" style="max-width:300px;margin:0 auto"><div id="chart-donut"></div></div>
+      <div class="legend" id="donut-legend"></div>
+      <p class="src"><a href="pengeluaran.html">Lihat semua 29 transaksi &rarr;</a></p>
+    </section>
+    <section class="card">
+      <h2>Aturan 50 / 30 / 20</h2>
+      <p class="lede">Pembagian anggaran keluarga ini dibanding aturan klasik: 50% kebutuhan, 30% keinginan, 20% tabungan.</p>
+      <div id="rule-5030"></div>
+      <h3 style="margin-top:16px">Pemasukan bulan ini</h3>
+      <ul class="tx-list" id="income-list"></ul>
+      <p class="src">Sumber: gaji, usaha sampingan, dan pemasukan lainnya.</p>
+    </section>
+  </div>
+
+  <div class="grid two" style="margin-top:16px">
+    <section class="card">
+      <h2>Transaksi terbaru</h2>
+      <p class="lede">8 transaksi terakhir. Tombol Hapus benar-benar menghapus — total di semua halaman ikut berubah.</p>
+      <ul class="tx-list" id="recent-tx"></ul>
+      <p class="src"><a href="pengeluaran.html">Buka pencatat pengeluaran &rarr;</a></p>
+    </section>
+    <section class="card">
+      <h2>Aman dibelanjakan hari ini</h2>
+      <p class="lede">Sisa Rp1.100.000 dibagi 4 hari tersisa di November: <b>Rp275.000 per hari</b>. Belanja di bawah angka itu dan bulan ditutup tanpa utang.</p>
+      <div class="callout"><b>Yang sudah beres bulan ini:</b> semua tagihan lunas (listrik, air, internet, cicilan motor, iuran RT), SPP dan les anak terbayar, dan setoran tabungan Rp2.500.000 sudah masuk.</div>
+      <h3 style="margin-top:16px">Jelajahi berdasarkan kebutuhan</h3>
+      <div class="quick-links" style="grid-template-columns:1fr 1fr">
+        <a href="anggaran.html"><b>Anggaran</b><span>Atur batas tiap kategori</span></a>
+        <a href="tabungan.html"><b>Tabungan</b><span>4 tujuan, kalkulator setoran</span></a>
+        <a href="laporan.html"><b>Laporan</b><span>Tren 6 bulan &amp; tips hemat</span></a>
+        <a href="pengeluaran.html"><b>Pengeluaran</b><span>Catat &amp; saring transaksi</span></a>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="site"><div class="foot-inner">
+  <div><h4>SakuRumah</h4>
+  Anggaran rumah tangga untuk Keluarga Prasetyo (4 orang, Jakarta Selatan). Angka di situs ini adalah anggaran contoh keluarga yang disusun untuk keperluan perencanaan — bukan data rekening sungguhan. Semua halaman bekerja tanpa internet; perubahan tersimpan di peramban Anda sendiri.</div>
+  <div><h4>Halaman</h4><ul>
+    <li><a href="index.html">Dashboard</a></li><li><a href="anggaran.html">Anggaran</a></li><li><a href="pengeluaran.html">Pengeluaran</a></li><li><a href="tabungan.html">Tabungan</a></li><li><a href="laporan.html">Laporan</a></li></ul></div>
+  <div><h4>Cara pakai</h4><ul>
+    <li>Angka dihitung dari transaksi</li><li>Ubah anggaran di halaman Anggaran</li><li>Perubahan tersimpan di peramban</li></ul></div>
+</div></footer>
+</body>
+</html>
